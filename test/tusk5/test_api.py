@@ -1,6 +1,6 @@
 import requests
 
-url = "http://34.125.57.194:8501/healthcheck"
+url = "https://dataen-mvfulkp9imtqm24v4zhmpy.streamlit.app/"
 timeout = 5  # Установите желаемое значение таймаута в секундах
 
 try:
