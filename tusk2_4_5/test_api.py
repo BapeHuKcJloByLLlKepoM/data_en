@@ -4,11 +4,11 @@ API_URL = "http://34.125.57.194:8501"
 ENDPOINT = "/synthesize_tts"
 
 def test_synthesize_tts():
-    # Test case 1: Check if the API is up and running
+    # Тест 1: проверка работоспособности API
     response = requests.get(API_URL + "/healthcheck")
     assert response.status_code == 200
 
-    # Test case 2: Send a POST request to synthesize TTS
+    # Тест 2: Запрос на озвучивание текста
     payload = {
         "text": "Hello, world!",
         "voice": "en-US"
@@ -16,7 +16,7 @@ def test_synthesize_tts():
     response = requests.post(API_URL + ENDPOINT, json=payload)
     assert response.status_code == 200
 
-    # Test case 3: Check the response content
+    # Тест 3: Проверьте содержимое ответа
     data = response.json()
     assert "audio" in data
     assert isinstance(data["audio"], str)
