@@ -1,10 +1,11 @@
 import unittest
+import json
 import requests
 
 class TestMmsTtsAPI(unittest.TestCase):
     def test_synthesize_text(self):
         text = "Hello, how are you?"
-        response = requests.post("https://appapppy-glg9ykmarcwvxrb4agbxyd.streamlit.app/synthesize_text", json={"text": text})
+        response = requests.post("https://https://dataen-mvfulkp9imtqm24v4zhmpy.streamlit.app/", json={"text": text})
 
         # Проверяем статус код ответа
         self.assertEqual(response.status_code, 200)
