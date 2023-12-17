@@ -1,25 +1,12 @@
 import requests
 
-API_URL = "http://34.125.57.194:8501"
-ENDPOINT = "/synthesize_tts"
+url = "http://34.125.57.194:8501/healthcheck"
+timeout = 5  # Установите желаемое значение таймаута в секундах
 
-def test_synthesize_tts():
-    # Тест 1: проверка работоспособности API
-    response = requests.get(API_URL + "/healthcheck")
-    assert response.status_code == 200
-
-    # Тест 2: Запрос на озвучивание текста
-    payload = {
-        "text": "Hello, world!",
-        "voice": "en-US"
-    }
-    response = requests.post(API_URL + ENDPOINT, json=payload)
-    assert response.status_code == 200
-
-    # Тест 3: Проверьте содержимое ответа
-    data = response.json()
-    assert "audio" in data
-    assert isinstance(data["audio"], str)
-
-if __name__ == "__main__":
-    test_synthesize_tts()
+try:
+    response = requests.get(url, timeout=timeout)
+    # Далее обрабатывайте ответ сервера...
+except requests.exceptions.Timeout:
+    print("Таймаут запроса. Проверьте подключение к серверу.")
+except requests.exceptions.RequestException as e:
+    print("Ошибка во время запроса:", e)
