@@ -20,7 +20,7 @@ def test_text_to_speech_translation():
 @pytest.fixture(scope="session", autouse=True)
 def run_streamlit_app():
     st._is_running_with_streamlit = True
-    import tusk2_4_5.streamlit_app  # Replace "app" with the filename of your Streamlit app
+    import ..tusk2_4_5.streamlit_app  # Replace "app" with the filename of your Streamlit app
     yield
 
 
