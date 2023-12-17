@@ -1,7 +1,7 @@
 import requests
 
 API_URL = "https://dataen-mvfulkp9imtqm24v4zhmpy.streamlit.app/"
-ENDPOINT = "/synthesize_tts"
+#ENDPOINT = "/synthesize_tts"
 
 def test_synthesize_tts():
     # Test case 1: Check if the API is up and running
@@ -13,7 +13,7 @@ def test_synthesize_tts():
         "text": "Hello, world!",
         "voice": "en-US"
     }
-    response = requests.post(API_URL + ENDPOINT, json=payload)
+    response = requests.post(API_URL, json=payload)
     assert response.status_code == 200
 
     # Test case 3: Check the response content
