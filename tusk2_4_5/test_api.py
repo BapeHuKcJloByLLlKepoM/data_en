@@ -1,6 +1,6 @@
 import requests
 
-API_URL = "http://35.237.179.38:8501"
+API_URL = "http://34.125.57.194:8501"
 ENDPOINT = "/synthesize_tts"
 
 def test_synthesize_tts():
