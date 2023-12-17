@@ -1,20 +1,30 @@
-import unittest
-import json
-import requests
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
 
-class TestMmsTtsAPI(unittest.TestCase):
-    def test_synthesize_text(self):
-        text = "Hello, how are you?"
-        response = requests.post("https://https://dataen-mvfulkp9imtqm24v4zhmpy.streamlit.app/", json={"text": text})
+@pytest.fixture(scope="module")
+def driver():
+    driver = webdriver.Chrome()
+    yield driver
+    driver.quit()
 
-        # Проверяем статус код ответа
-        self.assertEqual(response.status_code, 200)
-        
-        # Проверяем, что поле 'audio' присутствует в ответе
-        self.assertIn('audio', response.json())
-        
-        # Проверяем, что поле 'audio' не пустое
-        self.assertNotEqual(response.json()['audio'], '')
+@pytest.fixture(scope="module")
+def app_url():
+    return "https://dataen-mvfulkp9imtqm24v4zhmpy.streamlit.app/"
 
-if __name__ == '__main__':
-    unittest.main()
+def test_translation(driver, app_url):
+    driver.get(app_url)
+    try:
+        text_input = driver.find_element(By.XPATH, '//input[@type="text"]')
+        text_input.send_keys("Hello, World!" + Keys.ENTER)
+        driver.implicitly_wait(1000)
+    except NoSuchElementException:
+        assert False, "Text input element not found"
+
+    try:
+        audio_element = driver.find_element(By.XPATH, '//audio')
+        assert audio_element.is_displayed()
+    except NoSuchElementException:
+        assert False, "Audio element not found"
