@@ -25,6 +25,5 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
         run: pip install -r tusk2_4_5/requirements.txt
-    - name: Test with pytest
-      run: |
-        pytest
+    - name: Run tests
+        run: python tusk2_4_5/test_api.py
