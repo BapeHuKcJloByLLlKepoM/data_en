@@ -5,7 +5,7 @@ ENDPOINT = "/synthesize_tts"
 
 def test_synthesize_tts():
     # Test case 1: Check if the API is up and running
-    response = requests.get(API_URL + "/healthcheck")
+    response = requests.get(API_URL)
     assert response.status_code == 200
 
     # Test case 2: Send a POST request to synthesize TTS
