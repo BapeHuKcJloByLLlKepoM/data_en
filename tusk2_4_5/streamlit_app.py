@@ -4,6 +4,7 @@ import torch
 from transformers import VitsModel, AutoTokenizer
 
 
+
 @st.cache_resource()
 def load_model():
     model = VitsModel.from_pretrained("facebook/mms-tts-eng")
