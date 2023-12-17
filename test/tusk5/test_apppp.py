@@ -1,7 +1,7 @@
 import requests
 
-url = "http://34.125.57.194:8501/healthcheck"
-timeout = 5  # Установите желаемое значение таймаута в секундах
+url = "http://34.125.57.194:8501"
+timeout = 1000  # Установите желаемое значение таймаута в секундах
 
 try:
     response = requests.get(url, timeout=timeout)
