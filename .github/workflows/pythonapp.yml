@@ -22,4 +22,4 @@ jobs:
         run: pip install -r tusk2_4_5/requirements.txt
 
       - name: Run tests
-        run: tusk3/test_api.py
+        run: test_api.py
