@@ -1,24 +1,24 @@
-from transformers import VitsModel, AutoTokenizer
-import torch
+# from transformers import VitsModel, AutoTokenizer
+# import torch
 
-model = VitsModel.from_pretrained("facebook/mms-tts-eng")
-tokenizer = AutoTokenizer.from_pretrained("facebook/mms-tts-eng")
+# model = VitsModel.from_pretrained("facebook/mms-tts-eng")
+# tokenizer = AutoTokenizer.from_pretrained("facebook/mms-tts-eng")
 
-text = "welcome to the cum zone"
+# text = "welcome to the cum zone"
 
-inputs = tokenizer(text, return_tensors="pt")
+# inputs = tokenizer(text, return_tensors="pt")
 
-with torch.no_grad():
-    output = model(**inputs).waveform[0]
+# with torch.no_grad():
+#     output = model(**inputs).waveform[0]
 
-#сохранение  wav
+# #сохранение  wav
 
-import scipy
+# import scipy
 
-<put.float().numpy())
+# <put.float().numpy())
 
-# отображение аудио сразу 
+# # отображение аудио сразу 
 
-from IPython.display import Audio
+# from IPython.display import Audio
 
-Audio(output.numpy(), rate=model.config.sampling_rate)
+# Audio(output.numpy(), rate=model.config.sampling_rate)
