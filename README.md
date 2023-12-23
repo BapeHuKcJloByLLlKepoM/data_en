@@ -8,7 +8,7 @@
  - Реализация решения выбранной задачи в коде с использованием готовой библиотеки машинного обучения
 <h2> <bold>Задание 2, 4 - <a href="https://github.com/DanilaAkh/software_engineering/tree/main/tusk2_4"> tusk2_4</a></bold></h2>
 
- - Разработка Web-приложения на основе библиотеки Streamli
+ - Разработка Web-приложения на основе библиотеки Streamlit
  - Развертывание Web-приложения на облачной платформе Streamlit Cloud
 <h2> <bold>Задание 3 - <a href="https://github.com/DanilaAkh/software_engineering/tree/main/tusk3"> tusk3</a>, <a href="https://github.com/DanilaAkh/software_engineering/tree/main/tusk5"> tusk5</a></bold></h2>
 
