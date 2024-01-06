@@ -2,7 +2,6 @@ fastapi
 httpx
 pydantic
 streamlit
-streamlit.testing.v1
 tokenizers
 torch
 transformers
