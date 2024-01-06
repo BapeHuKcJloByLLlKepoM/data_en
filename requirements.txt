@@ -1,8 +1,8 @@
-fastapi==0.105.0
-httpx==0.23.2
+fastapi
+httpx
 pydantic
-streamlit==1.29.0
+streamlit
 streamlit.testing.v1
-tokenizers==0.15.0
-torch==2.1.1
-transformers==4.35.2
+tokenizers
+torch
+transformers
